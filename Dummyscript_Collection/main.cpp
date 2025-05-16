@@ -1,8 +1,10 @@
-#include <iostream>  // For input and output operations  
+﻿#include <iostream>  // For input and output operations  
 #include <locale>    // For setting the locale  
 #include <windows.h> // For Windows-specific functions like Sleep  
 #include "extraFunc.h" // Custom header file for additional functions  
-#include "algorithms.h" // Custom header file for algorithm implementations  
+#include "algorithms.h" // Custom header file for algorithm implementations 
+
+Algorithms* algorithms = new Algorithms();
 
 // Define the menuOPT variable, used to store the user's menu selection.  
 int menuOPT{};  
@@ -35,23 +37,23 @@ int main()
    // Use a switch statement to handle the user's menu selection.  
    switch (menuOPT) {  
    case 1:  
-       grade(); // Call the grade algorithm function.  
+       algorithms->grade(); // Call the grade algorithm function.  
        break;  
 
    case 2:  
-       triangle(); // Call the triangle algorithm function.  
+       algorithms->triangle(); // Call the triangle algorithm function.
        break;  
 
    case 3:  
-       number(); // Call the number identifier algorithm function.  
+       algorithms->number(); // Call the number identifier algorithm function.  
        break;  
 
    case 4:  
-       age(); // Call the age verification algorithm function.  
+       algorithms->age(); // Call the age verification algorithm function.  
        break;  
 
    case 5:  
-       chatbot(); // Call the chatbot algorithm function.  
+       algorithms->chatbot(); // Call the chatbot algorithm function.  
        break;  
 
    default:  

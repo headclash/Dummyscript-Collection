@@ -1,7 +1,7 @@
-#pragma once
+﻿#pragma once
 #include <cstdlib>
 
-void clearConsole() {
+static void clearConsole() {
 #ifdef _WIN32
 	system("cls");
 #else
