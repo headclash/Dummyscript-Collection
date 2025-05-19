@@ -1,12 +1,15 @@
-﻿#include "algorithms.h"
+﻿#include <iostream>
+#include <LOCALE>
+#include "algorithms.h"
+#include "extraFunc.h"
+#include <windows.h>
 
 /*Function to check if a student has a passing grade or if they'll be sent to
  recovery*/
 void Algorithms::grade()
 {
-	setlocale(LC_ALL, ""); // Set locale for proper character encoding
 
-	double nota{}; // Variable to store the student's grade
+	float nota{}; // Variable to store the student's grade
 
 	std::cout << "Insira a média do aluno: ";
 	std::cin >> nota;
@@ -33,14 +36,13 @@ void Algorithms::grade()
 	}
 }
 
-// Function to check if a triangle is equilateral
+// Function to check if a triangle is equilateral                                          
 void Algorithms::triangle()
 {
-	setlocale(LC_ALL, ""); // Set locale for proper character encoding
 
-	double l1{}; // Variable to store the first side of the triangle
-	double l2{}; // Variable to store the second side of the triangle
-	double l3{}; // Variable to store the third side of the triangle
+	float l1{}; // Variable to store the first side of the triangle
+	float l2{}; // Variable to store the second side of the triangle
+	float l3{}; // Variable to store the third side of the triangle
 
 	std::cout << "Digite o valor de todas as laterais do triângulo: \n";
 	std::cin >> l1;
@@ -62,10 +64,8 @@ void Algorithms::triangle()
 // Function to determine if a number is positive, negative, or zero
 void Algorithms::number()
 {
-	setlocale(LC_ALL, ""); // Set locale for proper character encoding
 
-
-	double n{}; // Variable to store the input number
+	float n{}; // Variable to store the input number
 
 	std::cout << "Insira um número: ";
 	std::cin >> n;
@@ -91,7 +91,6 @@ void Algorithms::number()
 // Function to determine the age category of a person
 void Algorithms::age()
 {
-	setlocale(LC_ALL, ""); // Set locale for proper character encoding
 
 	int age{}; // Variable to store the input age
 
@@ -127,7 +126,6 @@ void Algorithms::age()
 // Function to provide a chatbot-like interaction with options
 void Algorithms::chatbot()
 {
-	setlocale(LC_ALL, ""); // Set locale for proper character encoding
 
 	int option{}; // Variable to store the selected option
 
@@ -153,5 +151,193 @@ void Algorithms::chatbot()
 		// Option 3: Exit
 		std::cout << " ";
 		break;
+	}
+}
+
+// Code related to the <exchange> function
+void Algorithms::exchange()
+{
+	float rate{};
+	int dir{};
+	float usd{};
+	float brl{};
+
+	std::cout << "Insira a cotação do Dólar: ";
+	std::cin >> rate;
+
+	std::cout << "Você deseja converter o valor em Real para Dólar,"
+		"ou Dólar para real?\n";
+	std::cout << "1) Real para Dólar\n";
+	std::cout << "2) Dólar para Real\n";
+	std::cin >> dir;
+	switch (dir) {
+	case 1:
+		std::cout << "Insira o valor em Real: ";
+		std::cin >> brl;
+		usd = brl / rate;
+		std::cout << "O valor em Dólar é de $: " << usd << "\n";
+		break;
+
+	case 2:
+		std::cout << "Insira o valor em Dólar: ";
+		std::cin >> usd;
+		brl = usd * rate;
+		std::cout << "O valor em Real é de R$ : " << brl << "\n";
+		break;
+
+	default:
+		std::cout << "Opção inválida. Tente novamente.\n";
+		break;
+	}
+}
+
+// Code related to the <circumference> function
+void Algorithms::circle()
+{
+	static float pi = (3.14159f);
+	float area{};
+	float radius{};
+
+	std::cout << "Insira o valor do ráio em m²: ";
+	std::cin >> radius;
+	area = pi * (radius * radius);
+	std::cout << "\nA área da circumferência é de: " << area << "m²\n";
+}
+
+// Code related to the <centenary> function
+void Algorithms::centenary()
+{
+	int age{};
+	int dist100{};
+
+	std::cout << "Insira sua idade: ";
+	std::cin >> age;
+	dist100 = 100 - age;
+
+	std::cout << "Você completará 100 anos em: " << dist100 << " anos.\n";
+
+
+}
+
+void Algorithms::gradeMedian()
+{
+	float g1{};
+	float g2{};
+	float g3{};
+	float median{};
+
+	std::cout << "Insira as três notas do aluno, em sequencia: \n";
+	std::cin >> g1;
+	std::cin >> g2;
+	std::cin >> g3;
+	median = (g1 + g2 + g3) / 3;
+
+	std::cout << "A média do aluno é de: " << median << "\n";
+}
+
+void Algorithms::bulkPurchase()
+{
+	std::string name{};
+	float p{};
+	float q{};
+	float pT{};
+
+	std::cout << "Insira o nome do produto: ";
+	std::cin >> name;
+
+	std::cout << "Insira o preço do produto: ";
+	std::cin >> p;
+
+	std::cout << "Insira quantas unidades serão compradas: ";
+	std::cin >> q;
+
+	pT = (p * q);
+	std::cout << "O preço final da sua compra de " << name << " será de: R$ " <<
+		pT << "\n";
+
+
+}
+
+void Algorithms::salaryRange()
+{
+	float salary{};
+
+	std::cout << "Insira o seu salário: ";
+	std::cin >> salary;
+
+	if (salary >= 5000) {
+		std::cout << "Alta renda.";
+		return;
+	}
+
+	if (salary >= 1500) {
+		std::cout << "Média renda.";
+		return;
+	}
+
+	if (salary < 1500) {
+		std::cout << "Renda baixa.";
+		return;
+	}
+
+}
+
+void Algorithms::temperature()
+{
+	int temp{};
+
+	std::cout << "Insira a temperatura em Celsius: ";
+	std::cin >> temp;
+
+	if (temp >= 30) {
+		std::cout << "A temperatura está quente.";
+		return;
+	}
+
+	if (temp >= 15) {
+		std::cout << "A temperatura está agradável.";
+		return;
+	}
+
+	if (temp < 15) {
+		std::cout << "A temperatura está fria.";
+		return;
+	}
+
+}
+
+void Algorithms::productList()
+{
+	int prodCode{};
+
+	std::cout << "Insira o código do produto: ";
+	std::cin >> prodCode;
+
+	switch (prodCode) {
+	case 1:
+		std::cout << "Alimento.";
+		break;
+
+	case 2:
+		std::cout << "Bebida.";
+		break;
+
+	case 3:
+		std::cout << "Limpeza.";
+		break;
+
+	case 4:
+		std::cout << "Eletrônico.";
+		break;
+
+	case 5:
+		std::cout << "Vestuário.";
+		break;
+
+	default:
+		std::cout << "Código inválido, tente novamente.";
+		Sleep(2000);
+		clearConsole();
+		return productList();
 	}
 }

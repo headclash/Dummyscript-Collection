@@ -1,6 +1,4 @@
 ﻿#pragma once  
-#include <iostream>  
-#include "extraFunc.h"  
 
 class Algorithms {
 public:
@@ -14,5 +12,20 @@ public:
 	void age();
 	// Function to provide a chatbot-like interaction with options  
 	void chatbot();
+	// Function to convert a value in BRL to USD and vice versa.
+	void exchange();
+	// Function to calculate the area of a circle given its radius
+	void circle();
 
+	void centenary();
+
+	void gradeMedian();
+
+	void bulkPurchase();
+
+	void salaryRange();
+
+	void temperature();
+
+	void productList();
 };

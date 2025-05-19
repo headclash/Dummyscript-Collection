@@ -18,19 +18,22 @@ int main()
 
 	// Display the list of available algorithms to the user.  
 	std::cout << "Available Algorithms: \n";
-	std::cout << "1 - Student Grade Algorithm.\n"; // Option 1: Grade calculation  
-	std::cout << "2 - Triangle Sides Algorithm.\n"; // Option 2: Triangle validation  
-	std::cout << "3 - Number Identifier Algorithm.\n"; // Option 3: Number identification  
-	std::cout << "4 - Age Verification Algorithm.\n"; // Option 4: Age verification  
-	std::cout << "5 - Chatbot Algorithm.\n"; // Option 5: Chatbot interaction  
-	std::cout << "6 - Not yet implemented.\n"; // Placeholder for future implementation  
-	std::cout << "7 - Not yet implemented.\n"; // Placeholder for future implementation  
-	std::cout << "8 - Not yet implemented.\n"; // Placeholder for future implementation  
-	std::cout << "9 - Not yet implemented.\n"; // Placeholder for future implementation  
-	std::cout << "10 - Not yet implemented.\n"; // Placeholder for future implementation  
+	std::cout << "1 - Student Grade Algorithm.\n";
+	std::cout << "2 - Triangle Sides Algorithm.\n";
+	std::cout << "3 - Number Identifier Algorithm.\n";
+	std::cout << "4 - Age Verification Algorithm.\n";
+	std::cout << "5 - Chatbot Algorithm.\n";
+	std::cout << "6 - USD <-> BRL Exchange Algorithm.\n";
+	std::cout << "7 - Circle Area Algorithm.\n";
+	std::cout << "8 - Distance to age 100 Algorithm.\n";
+	std::cout << "9 - Median Grade Algorithm.\n";
+	std::cout << "10 - Bulk Purchase Algorithm.\n";
+	std::cout << "11 - Salary Range Algorithm.\n";
+	std::cout << "12 - Temperature Algorithm.\n";
+	std::cout << "13 - Product List Algorithm.\n";
 
 	// Prompt the user to pick an algorithm by entering a number.  
-	std::cout << "Pick one: ";
+	std::cout << "\nPick one: ";
 	std::cin >> menuOPT; // Read the user's input into menuOPT.  
 	clearConsole(); // Clear the console screen (defined in extraFunc.h).  
 
@@ -54,6 +57,38 @@ int main()
 
 	case 5:
 		algorithms->chatbot(); // Call the chatbot algorithm function.  
+		break;
+
+	case 6:
+		algorithms->exchange(); // Call the currency exchange algorithm function.
+		break;
+
+	case 7:
+		algorithms->circle(); // Call the circle area algorithm function.;
+		break;
+
+	case 8:
+		algorithms->centenary();
+		break;
+
+	case 9:
+		algorithms->gradeMedian();
+		break;
+
+	case 10:
+		algorithms->bulkPurchase();
+		break;
+
+	case 11:
+		algorithms->salaryRange();
+		break;
+
+	case 12:
+		algorithms->temperature();
+		break;
+
+	case 13:
+		algorithms->productList();
 		break;
 
 	default:
